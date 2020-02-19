@@ -1,5 +1,6 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from "react-navigation-stack";
+import { DrawerNavigator } from 'react-navigation';
 import Login from './App';
 import Signup from './screen/Signup'
 import Verifica from './screen/Verification'
