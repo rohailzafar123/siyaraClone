@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import {
   SafeAreaView,
@@ -13,6 +12,8 @@ import {
 } from 'react-native';
 import Next from 'react-native-vector-icons/Feather';
 import { TextInput } from 'react-native-gesture-handler';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 const { width, height } = Dimensions.get('window');
 class Login extends Component {
 
@@ -21,6 +22,8 @@ class Login extends Component {
       <View style={{
         flex: 1,
         backgroundColor: 'white',
+        width: width * 1,
+        height: height * 1,
       }}>
         <StatusBar backgroundColor="black" barStyle="default" hidden={true} showHideTransition={'fade'}></StatusBar>
 
@@ -33,7 +36,7 @@ class Login extends Component {
           }}>
             <Image source={require('./images/logIn-Background.jpg')}
               style={{
-                width: width * 1,
+                width: wp('100%'),
                 height: height * .75,
               }} />
             <View style={styles.heading}>
@@ -57,9 +60,9 @@ class Login extends Component {
             <Image source={require('./images/logo.png')}
               style={{
                 alignSelf: 'center',
-                width: width * .30,
-                height: height * .16,
-                marginTop: 10,
+                width: width * .32,
+                height: height * .15,
+                marginTop: 40,
               }} />
 
           </View>
@@ -126,16 +129,16 @@ class Login extends Component {
                 </Text>
           </View>
           <View>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')}>
-              <View style={styles.nextButton}>
+            <TouchableOpacity
+            style={styles.nextButton}
+            onPress={() => this.props.navigation.navigate('Signup')}>
+              <View >
                 <Next name='arrow-right' size={20} color='white' />
               </View>
             </TouchableOpacity>
           </View>
-
         </View>
       </View>
-
     );
   }
 }
@@ -150,11 +153,11 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     backgroundColor: '#35aeff',
-    width: width * .1,
-    height: height * .06,
+    width: wp('10%'),
+    height: hp('5.5%'),
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 100,
+    borderRadius:100,
     elevation: 3,
 
   },

@@ -1,11 +1,10 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from "react-navigation-stack";
-import { DrawerNavigator } from 'react-navigation';
 import Login from './App';
 import Signup from './screen/Signup'
 import Verifica from './screen/Verification'
 import Home from './screen/HomeScreen'
-
+import Map from './screen/Map'
 const AppNavigator = createStackNavigator(
     {
     Login,
@@ -22,4 +21,13 @@ const AppNavigator = createStackNavigator(
     },
   },
 );
+// const Drawer = createDrawerNavigator(
+//   {
+//     Map
+//   },
+//   {
+//     headerModer: 'none',
+
+//   },
+// );
 export default createAppContainer(AppNavigator)

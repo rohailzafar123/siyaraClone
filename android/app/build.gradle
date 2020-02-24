@@ -188,6 +188,7 @@ signingConfig signingConfigs.release
 }
 
 dependencies {
+    implementation project(':@react-native-community_geolocation')
     implementation project(':react-native-reanimated')
     implementation project(':react-native-safe-area-context')
     implementation project(':react-native-gesture-handler')

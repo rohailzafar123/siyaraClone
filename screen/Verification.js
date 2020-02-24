@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Back from 'react-native-vector-icons/MaterialCommunityIcons';
 import Next from 'react-native-vector-icons/Feather';
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { TextInput } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 class Verification extends Component {
@@ -64,40 +64,49 @@ class Verification extends Component {
                     }}>
                         <TextInput
                             placeholder='0'
+                            keyboardType={'numeric'}
+                            maxLength={1}
                             style={{
                                 width: width * .15,
                                 borderBottomWidth: 2,
                                 borderBottomColor: '#35aeff',
-                                fontSize:30,
-                                textAlign:"center",
-                                
+                                fontSize: 30,
+                                textAlign: "center",
+
                             }} />
                         <TextInput
                             placeholder='0'
+                            maxLength={1}
+                            keyboardType={'numeric'}
                             style={{
                                 width: width * .15,
                                 borderBottomWidth: 2,
                                 borderBottomColor: '#35aeff',
-                                fontSize:30,
-                                textAlign:"center",
+                                fontSize: 30,
+                                textAlign: "center",
                             }} />
                         <TextInput
                             placeholder='0'
+                            maxLength={1}
+                            keyboardType={'numeric'}
                             style={{
                                 width: width * .15,
                                 borderBottomWidth: 2,
                                 borderBottomColor: '#35aeff',
-                                fontSize:30,
-                                textAlign:"center",
+                                fontSize: 30,
+                                textAlign: "center",
                             }} />
                         <TextInput
                             placeholder='0'
+                            maxLength={1}
+                            keyboardType={'numeric'}
                             style={{
                                 width: width * .15,
                                 borderBottomWidth: 2,
                                 borderBottomColor: '#35aeff',
-                                fontSize:30,
-                                textAlign:"center",
+                                fontSize: 30,
+                                textAlign: "center",
+
                             }} />
 
                     </View>
@@ -127,14 +136,16 @@ class Verification extends Component {
                     }}>
                         <Text style={{
                             color: '#464646',
-                            paddingRight:2,
+                            paddingRight: 2,
                         }}>
                             Please enter the Verification code we sent to your phone number.
                 </Text>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-                            <View style={styles.nextButton}>
+                        <TouchableOpacity
+                        style={styles.nextButton}
+                        onPress={() => this.props.navigation.navigate('Home')}>
+                            <View>
                                 <Next name='arrow-right' size={20} color='white' />
                             </View>
                         </TouchableOpacity>
@@ -148,11 +159,11 @@ class Verification extends Component {
 const styles = StyleSheet.create({
     nextButton: {
         backgroundColor: '#35aeff',
-        width: width * .1,
-        height: height * .06,
+        width: wp('10%'),
+        height: hp('5.5%'),
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 100,
+        borderRadius: (width * .1 ) / 1,
         elevation: 3,
 
     },

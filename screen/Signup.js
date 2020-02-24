@@ -16,6 +16,7 @@ import Back from 'react-native-vector-icons/MaterialCommunityIcons';
 import Next from 'react-native-vector-icons/Feather';
 import { RadioGroup } from 'react-native-btr';
 import { TextInput } from 'react-native-gesture-handler';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const gender = [
     { label: ' Male ', value: 0 },
@@ -157,8 +158,10 @@ class Signup extends Component {
                 </Text>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Verifica')}>
-                            <View style={styles.nextButton}>
+                        <TouchableOpacity
+                        style={styles.nextButton}
+                        onPress={() => this.props.navigation.navigate('Verifica')}>
+                            <View >
                                 <Next name='arrow-right' size={20} color='white' />
                             </View>
                         </TouchableOpacity>
@@ -172,8 +175,8 @@ class Signup extends Component {
 const styles = StyleSheet.create({
     nextButton: {
         backgroundColor: '#35aeff',
-        width: width * .1,
-        height: height * .06,
+        width: wp('10%'),
+        height: hp('5.5%'),
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 100,
