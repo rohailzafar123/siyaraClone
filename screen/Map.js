@@ -11,12 +11,11 @@ import {
   Image
 } from 'react-native';
 import MapView, { Marker,PROVIDER_GOOGLE } from 'react-native-maps';
-import { Container, Button, Header, Content, Left } from 'native-base'
 import Icon from 'react-native-vector-icons/AntDesign'
 import Location from 'react-native-vector-icons/MaterialIcons'
 import { TextInput } from 'react-native-gesture-handler';
 import Geolocation from '@react-native-community/geolocation';
-
+// import SearchResult from './MapPage'
 const { width, height } = Dimensions.get('window');
 class Map extends Component {
     constructor(props) {
@@ -43,13 +42,16 @@ class Map extends Component {
     }
     work = () => {
       this.setState({
-        showsUserLocation: true
+        showsUserLocation: true,
+
       })
     }
   
   render() {
     return (
-      <Container>
+      <View>
+        <View>
+
         <MapView
           provider={PROVIDER_GOOGLE}
           showsUserLocation={this.state.showsUserLocation}
@@ -59,26 +61,32 @@ class Map extends Component {
             position: 'absolute',
           }}
           initialRegion={this.state}
-        >          
+          showsMyLocationButton={true}
+
+          >          
         </MapView>
+        </View>
+        <View>
+
         <TouchableOpacity style={{
           margin: 10,
           width: width * .1,
         }}
-          onPress={() => this.props.navigation.openDrawer()}  >
+        onPress={() => this.props.navigation.openDrawer()}  >
           <Icon name='menu-unfold' size={30} />
         </TouchableOpacity>
 
+        </View>
         <View style={{
-          justifyContent: 'space-evenly',
-          // alignItems:'center'
           flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          alignItems:'flex-end',
           position: 'absolute',
-          bottom: 0,
-          marginBottom: 15,
-          // marginLeft: 20,
+          paddingBottom: 15,
           width: width * 1,
+          height:height * 1,
         }}>
+
           <TextInput style={{
             width: width * .75,
             backgroundColor: 'white',
@@ -86,7 +94,7 @@ class Map extends Component {
             elevation: 3,
             height: height * .06,
             paddingLeft: 20,
-
+            
           }}>
           </TextInput>
 
@@ -105,17 +113,17 @@ class Map extends Component {
               <Location name='my-location' size={25} />
 
             </TouchableOpacity>
+            </View>
 
-          </View>
         </View>
-      </Container>
+      </View>
     );
   }
 }
 const styles = StyleSheet.create({
   backgroundImager: {
     position: 'relative',
-
+    
   },
   heading: {
     marginTop: -90,

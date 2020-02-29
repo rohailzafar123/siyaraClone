@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     nextButton: {
         backgroundColor: '#35aeff',
         width: wp('10%'),
-        height: hp('5.5%'),
+        height: hp('6%'),
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: (width * .1 ) / 1,

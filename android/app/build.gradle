@@ -188,6 +188,7 @@ signingConfig signingConfigs.release
 }
 
 dependencies {
+    implementation project(':react-native-google-places')
     implementation project(':@react-native-community_geolocation')
     implementation project(':react-native-reanimated')
     implementation project(':react-native-safe-area-context')
@@ -196,6 +197,7 @@ dependencies {
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")

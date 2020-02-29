@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions, Image} fr
 import { DrawerItems } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import DrawerScreen1 from '../screen/Map';
+import DrawerScreen2 from '../screen/drawer';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 const { width, height } = Dimensions.get('window');
 
@@ -37,12 +38,12 @@ const { width, height } = Dimensions.get('window');
           drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
         }   },
 
-      // DrawerScreen2: {
-      //   screen: DrawerScreen2,
-      //   navigationOptions: {
-      //     drawerLabel: 'DrawerScreen2',
-      //     drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
-      //   }   },
+      DrawerScreen2: {
+        screen: DrawerScreen2,
+        navigationOptions: {
+          drawerLabel: 'DrawerScreen2',
+          drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+        }   },
 
       // DrawerScreen3: {
       //   screen: DrawerScreen3,

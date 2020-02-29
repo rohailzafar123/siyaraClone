@@ -22,8 +22,6 @@ class Login extends Component {
       <View style={{
         flex: 1,
         backgroundColor: 'white',
-        width: width * 1,
-        height: height * 1,
       }}>
         <StatusBar backgroundColor="black" barStyle="default" hidden={true} showHideTransition={'fade'}></StatusBar>
 
@@ -154,7 +152,7 @@ const styles = StyleSheet.create({
   nextButton: {
     backgroundColor: '#35aeff',
     width: wp('10%'),
-    height: hp('5.5%'),
+    height: hp('6%'),
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius:100,
